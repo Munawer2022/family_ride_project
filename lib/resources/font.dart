@@ -1,1 +1,3 @@
-const String firstfont = 'Lato';
+class fonts {
+  static String firstfont = 'Lato';
+}

@@ -15,36 +15,65 @@ class Profile extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return SafeArea(
         child: Scaffold(
-      appBar: appBar(
-          Image.asset(
-            profilescreen_familyImage,
-            scale: 15,
-          ),
-          [
-            TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, RoutesName.loginScreen);
-                },
-                child: const Text('Logout'))
-          ],
-          true),
+      appBar: MyAppBarWidget(
+        title: '',
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.arrow_back_ios)),
+
+        // title: Image.asset(
+        //   profilescreen_familyImage,
+        //   scale: 15,
+        // ),
+        ontap: [
+          TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, RoutesName.loginScreen);
+              },
+              child: const Text('Logout'))
+        ],
+      ),
+      // appBar: appBar(
+      //     Image.asset(
+      //       profilescreen_familyImage,
+      //       scale: 15,
+      //     ),
+      //     [
+      //       TextButton(
+      //           onPressed: () {
+      //             Navigator.pushNamed(context, RoutesName.loginScreen);
+      //           },
+      //           child: const Text('Logout'))
+      //     ],
+      //     true),
       body: Padding(
-        padding: screenPadding.copyWith(left: 30.0, right: 30.0),
+        padding: screenPadding,
+        //copyWith(left: 30.0, right: 30.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Image.asset(
+              profilescreen_familyImage,
+              scale: 5,
+            ),
+            SizedBox(
+              height: size.height * 0.07,
+            ),
             Align(
               alignment: Alignment.centerLeft,
               child: Text(
                 'Profile',
-                style: theme.textTheme.headline6
-                    ?.copyWith(fontWeight: FontWeight.bold),
+                style: theme.textTheme.headline4?.copyWith(
+                    color: Colors.black, fontWeight: FontWeight.w800),
               ),
             ),
             SizedBox(
               height: size.height * 0.02,
             ),
             const TextFieldComponent(
+                icon: Icon(Icons.person_rounded),
                 validator: null,
                 controller: null,
                 keyboardType: TextInputType.text,
@@ -53,6 +82,7 @@ class Profile extends StatelessWidget {
               height: size.height * 0.02,
             ),
             const TextFieldComponent(
+                icon: Icon(Icons.alternate_email),
                 validator: null,
                 controller: null,
                 keyboardType: TextInputType.emailAddress,
@@ -61,6 +91,7 @@ class Profile extends StatelessWidget {
               height: size.height * 0.02,
             ),
             const TextFieldComponent(
+                icon: Icon(Icons.pin),
                 validator: null,
                 controller: null,
                 keyboardType: TextInputType.number,
@@ -69,6 +100,7 @@ class Profile extends StatelessWidget {
               height: size.height * 0.02,
             ),
             const TextFieldComponent(
+                icon: Icon(Icons.pin),
                 validator: null,
                 controller: null,
                 keyboardType: TextInputType.number,

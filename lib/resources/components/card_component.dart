@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:rider/resources/padding.dart';
 import 'package:rider/view/dashboard_screen.dart';
 
@@ -23,9 +24,9 @@ class CardComponent extends StatelessWidget {
     var theme = Theme.of(context);
     return Card(
       // elevation: 0,
-      // color: Colors.white,
+      color: shadeColor,
       child: Padding(
-        padding: screenPadding,
+        padding: screenPadding.copyWith(left: 20, right: 20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -35,13 +36,13 @@ class CardComponent extends StatelessWidget {
                     color: shadeColor, borderRadius: BorderRadius.circular(8)),
                 child: Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
                   child: Container(
                       decoration: BoxDecoration(
                           color: color, borderRadius: BorderRadius.circular(6)),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 6, vertical: 2),
+                            horizontal: 8, vertical: 4),
                         child: Text(
                           containerText,
                           style: const TextStyle(color: Colors.white),
@@ -51,19 +52,15 @@ class CardComponent extends StatelessWidget {
             SizedBox(
               height: size.height * 0.01,
             ),
-            Text(titleText,
-                style: theme.textTheme.titleMedium?.copyWith(
-                  fontFamily: Font.fontname,
-                )),
+            Text(titleText, style: theme.textTheme.titleMedium),
             SizedBox(
               height: size.height * 0.01,
             ),
             Text(subTitleText,
                 style: theme.textTheme.headline6?.copyWith(
-                  color: Colors.grey.shade600,
+                  // color: Colors.grey.shade600,
                   fontWeight: FontWeight.bold,
-                  fontFamily: Font.fontname,
-                )),
+                ))
           ],
         ),
       ),

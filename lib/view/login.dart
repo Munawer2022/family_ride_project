@@ -14,7 +14,8 @@ class Login extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
       body: Padding(
-        padding: screenPadding.copyWith(left: 30.0, right: 30.0),
+        padding: screenPadding,
+        //copyWith(left: 30.0, right: 30.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -29,14 +30,15 @@ class Login extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child: Text(
                 'Login',
-                style: theme.textTheme.headline6
-                    ?.copyWith(fontWeight: FontWeight.bold),
+                style: theme.textTheme.headline3?.copyWith(
+                    color: Colors.black, fontWeight: FontWeight.w800),
               ),
             ),
             SizedBox(
               height: size.height * 0.02,
             ),
             const TextFieldComponent(
+                icon: Icon(Icons.numbers),
                 validator: null,
                 controller: null,
                 keyboardType: TextInputType.number,
@@ -45,6 +47,7 @@ class Login extends StatelessWidget {
               height: size.height * 0.02,
             ),
             const TextFieldComponent(
+                icon: Icon(Icons.pin),
                 validator: null,
                 controller: null,
                 keyboardType: TextInputType.number,
@@ -58,9 +61,13 @@ class Login extends StatelessWidget {
                   height: 50,
                   width: double.infinity,
                   child: ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(Colors.blue)),
                       onPressed: () {},
                       child: const Text(
                         'Login',
+                        style: TextStyle(color: Colors.white),
                       ))),
             )
           ],

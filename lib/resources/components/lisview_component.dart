@@ -14,8 +14,6 @@ class ListViewComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      // elevation: 0,
-      // color: Colors.white,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListTile(title: title, subtitle: subtitle, trailing: trailing),

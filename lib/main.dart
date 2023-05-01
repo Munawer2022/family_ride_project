@@ -15,9 +15,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      // themeMode: ThemeMode.dark,
+      // darkTheme: ThemeData.dark(useMaterial3: true),
       theme: ThemeData(
         colorSchemeSeed: Colors.grey.shade200,
-        fontFamily: firstfont,
+        fontFamily: fonts.firstfont,
         useMaterial3: true,
       ),
       initialRoute: RoutesName.dashboardScreen,

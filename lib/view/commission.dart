@@ -13,18 +13,30 @@ class Commission extends StatelessWidget {
     var theme = Theme.of(context);
     return SafeArea(
       child: Scaffold(
-          appBar: appBar(
-              const Text(
-                'Commission',
-              ),
-              null,
-              true),
+          appBar: MyAppBarWidget(
+            ontap: null,
+            leading: IconButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                icon: Icon(Icons.arrow_back_ios)),
+            title: 'Commission',
+          ),
+
+          // appBar(
+          //     const Text(
+          //       'Commission',
+          //     ),
+          //     null,
+          //     true),
           body: Padding(
             padding: screenPadding,
             child: Column(
               children: [
                 Expanded(
                   child: ListView(
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
                     children: const [
                       ListViewComponent(
                           title: Text('Date'),

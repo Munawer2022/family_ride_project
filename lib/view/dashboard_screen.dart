@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rider/resources/components/card_component.dart';
 import 'package:rider/resources/components/appbar.dart';
+
 import 'package:rider/resources/padding.dart';
 
 import '../resources/components/lisview_component.dart';
@@ -16,50 +17,60 @@ class DashboardScreen extends StatelessWidget {
 
     return SafeArea(
       child: Scaffold(
-        appBar: appBar(
-            const Text(
-              'Dashboard',
-            ),
-            [
-              IconButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, RoutesName.profileScreen);
-                  },
-                  icon: const Icon(Icons.person_pin))
-            ],
-            false),
+        appBar: MyAppBarWidget(
+          title: 'Dashboard',
+          ontap: [
+            IconButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, RoutesName.profileScreen);
+                },
+                icon: const Icon(Icons.person_pin))
+          ],
+        ),
+        // appBar(
+        //     const Text(
+        //       'Dashboard',
+        //     ),
+        //     [
+        //       IconButton(
+        //           onPressed: () {
+        //             Navigator.pushNamed(context, RoutesName.profileScreen);
+        //           },
+        //           icon: const Icon(Icons.person_pin))
+        //     ],
+        //     false),
         body: Padding(
           padding: screenPadding,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // width: double.infinity,
+              //     height: size.height * 0.3,
+              GridView(
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                ),
+                children: [
+                  CardComponent(
+                      color: Colors.blue,
+                      containerText: 'A',
+                      titleText: 'Active Riders',
+                      subTitleText: '50',
+                      shadeColor: Colors.blue.shade50),
+                  CardComponent(
+                      color: Colors.red,
+                      containerText: 'O',
+                      titleText: 'OFF Riders',
+                      subTitleText: '70',
+                      shadeColor: Colors.red.shade50),
+                ],
+              ),
               SizedBox(
-                  width: double.infinity,
-                  height: 200,
-                  child: GridView(
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 10,
-                    ),
-                    children: [
-                      CardComponent(
-                          color: Colors.blue,
-                          containerText: 'A',
-                          titleText: 'Active Riders',
-                          subTitleText: '50',
-                          shadeColor: Colors.blue.shade50),
-                      CardComponent(
-                          color: Colors.red,
-                          containerText: 'O',
-                          titleText: 'OFF Riders',
-                          subTitleText: '70',
-                          shadeColor: Colors.red.shade50),
-                    ],
-                  )),
+                height: size.height * 0.03,
+              ),
               Card(
-                // elevation: 0,
-                // color: Colors.white,
                 child: ListTile(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
@@ -71,20 +82,19 @@ class DashboardScreen extends StatelessWidget {
                     subtitle: const Text('Earned'),
                     trailing: const Text(
                       'Rs: 100',
-                      style: TextStyle(fontWeight: FontWeight.bold),
                     )),
               ),
               ListTile(
                 title: Text('Rider/Driver List',
-                    style: theme.textTheme.headline6?.copyWith(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: Font.fontname)),
+                    style: theme.textTheme.titleMedium?.copyWith(
+                      // fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                    )),
               ),
               Expanded(
                 child: ListView(
-                  // physics: const NeverScrollableScrollPhysics(),
-                  // shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
                   children: [
                     ListViewComponent(
                       title: const Text('Rider ID'),
@@ -102,9 +112,9 @@ class DashboardScreen extends StatelessWidget {
                           SizedBox(
                             height: size.height * 0.005,
                           ),
-                          const Icon(
+                          Icon(
                             Icons.pedal_bike_outlined,
-                            size: 40,
+                            size: size.height * 0.04,
                           ),
                         ],
                       ),
@@ -125,9 +135,9 @@ class DashboardScreen extends StatelessWidget {
                           SizedBox(
                             height: size.height * 0.005,
                           ),
-                          const Icon(
+                          Icon(
                             Icons.car_repair,
-                            size: 40,
+                            size: size.height * 0.04,
                           ),
                         ],
                       ),
@@ -148,9 +158,9 @@ class DashboardScreen extends StatelessWidget {
                           SizedBox(
                             height: size.height * 0.005,
                           ),
-                          const Icon(
+                          Icon(
                             Icons.electric_bike_sharp,
-                            size: 40,
+                            size: size.height * 0.04,
                           ),
                         ],
                       ),
@@ -164,8 +174,4 @@ class DashboardScreen extends StatelessWidget {
       ),
     );
   }
-}
-
-class Font {
-  static const fontname = 'Lato';
 }
