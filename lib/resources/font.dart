@@ -1,3 +1,3 @@
 class fonts {
-  static String firstfont = 'Lato';
+  static String firstfont = 'Montserrat';
 }

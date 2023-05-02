@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rider/resources/components/card_component.dart';
 import 'package:rider/resources/components/appbar.dart';
+import 'package:rider/resources/images.dart';
 
 import 'package:rider/resources/padding.dart';
 
@@ -27,18 +28,6 @@ class DashboardScreen extends StatelessWidget {
                 icon: const Icon(Icons.person_pin))
           ],
         ),
-        // appBar(
-        //     const Text(
-        //       'Dashboard',
-        //     ),
-        //     [
-        //       IconButton(
-        //           onPressed: () {
-        //             Navigator.pushNamed(context, RoutesName.profileScreen);
-        //           },
-        //           icon: const Icon(Icons.person_pin))
-        //     ],
-        //     false),
         body: Padding(
           padding: screenPadding,
           child: Column(
@@ -96,73 +85,269 @@ class DashboardScreen extends StatelessWidget {
                   physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   children: [
-                    ListViewComponent(
-                      title: const Text('Rider ID'),
-                      subtitle: const Text('Rider Name'),
-                      trailing: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            height: 10,
-                            width: 10,
-                            decoration: BoxDecoration(
-                                color: Colors.red,
-                                borderRadius: BorderRadius.circular(50)),
-                          ),
-                          SizedBox(
-                            height: size.height * 0.005,
-                          ),
-                          Icon(
-                            Icons.pedal_bike_outlined,
-                            size: size.height * 0.04,
-                          ),
-                        ],
+                    Card(
+                      child: ListTile(
+                        dense: false,
+                        trailing: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              height: 10,
+                              width: 10,
+                              decoration: BoxDecoration(
+                                  color: Colors.red,
+                                  borderRadius: BorderRadius.circular(50)),
+                            ),
+                            SizedBox(
+                              height: size.height * 0.005,
+                            ),
+                            Image.asset(
+                              car,
+                              scale: 7,
+                            )
+                          ],
+                        ),
+                        // leading: Column(
+                        //   mainAxisAlignment: MainAxisAlignment.center,
+                        //   crossAxisAlignment: CrossAxisAlignment.start,
+                        //   children: [
+                        //     Text(
+                        //       "Rs " + "100",
+                        //       style: TextStyle(
+                        //           fontWeight: FontWeight.w800,
+                        //           fontSize: 14,
+                        //           color: Colors.grey),
+                        //     ),
+                        //     SizedBox(
+                        //       height: 2,
+                        //     ),
+                        //     Text(
+                        //       '1 he',
+                        //       style: TextStyle(
+                        //           fontWeight: FontWeight.w800,
+                        //           fontSize: 14,
+                        //           color: Colors.black),
+                        //     ),
+                        //   ],
+                        // ),
+                        title: const Text('Rider ID'),
+                        subtitle: const Text('Rider Name'),
+
+                        // title: Text(
+                        //   "pickup",
+                        //   style: TextStyle(
+                        //       fontWeight: FontWeight.w400,
+                        //       fontSize: 16,
+                        //       color: Colors.black),
+                        // ),
+                        // subtitle: Padding(
+                        //   padding: EdgeInsets.only(top: 5),
+                        //   child: Text(
+                        //     "drop",
+                        //     style: TextStyle(
+                        //         fontWeight: FontWeight.w400,
+                        //         fontSize: 14,
+                        //         color: Colors.grey),
+                        //   ),
+                        // ),
                       ),
                     ),
-                    ListViewComponent(
-                      title: const Text('Rider ID'),
-                      subtitle: const Text('Rider Name'),
-                      trailing: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            height: 10,
-                            width: 10,
-                            decoration: BoxDecoration(
-                                color: Colors.blue,
-                                borderRadius: BorderRadius.circular(50)),
-                          ),
-                          SizedBox(
-                            height: size.height * 0.005,
-                          ),
-                          Icon(
-                            Icons.car_repair,
-                            size: size.height * 0.04,
-                          ),
-                        ],
+                    Card(
+                      child: ListTile(
+                        dense: false,
+                        trailing: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              height: 10,
+                              width: 10,
+                              decoration: BoxDecoration(
+                                  color: Colors.red,
+                                  borderRadius: BorderRadius.circular(50)),
+                            ),
+                            SizedBox(
+                              height: size.height * 0.005,
+                            ),
+                            Image.asset(
+                              ac_car,
+                              scale: 7,
+                            )
+                          ],
+                        ),
+                        // leading: Column(
+                        //   mainAxisAlignment: MainAxisAlignment.center,
+                        //   crossAxisAlignment: CrossAxisAlignment.start,
+                        //   children: [
+                        //     Text(
+                        //       "Rs " + "100",
+                        //       style: TextStyle(
+                        //           fontWeight: FontWeight.w800,
+                        //           fontSize: 14,
+                        //           color: Colors.grey),
+                        //     ),
+                        //     SizedBox(
+                        //       height: 2,
+                        //     ),
+                        //     Text(
+                        //       '1 he',
+                        //       style: TextStyle(
+                        //           fontWeight: FontWeight.w800,
+                        //           fontSize: 14,
+                        //           color: Colors.black),
+                        //     ),
+                        //   ],
+                        // ),
+                        // title: Text(
+                        //   "pickup",
+                        //   style: TextStyle(
+                        //       fontWeight: FontWeight.w400,
+                        //       fontSize: 16,
+                        //       color: Colors.black),
+                        // ),
+                        // subtitle: Padding(
+                        //   padding: EdgeInsets.only(top: 5),
+                        //   child: Text(
+                        //     "drop",
+                        //     style: TextStyle(
+                        //         fontWeight: FontWeight.w400,
+                        //         fontSize: 14,
+                        //         color: Colors.grey),
+                        //   ),
+                        // ),
+                        title: const Text('Rider ID'),
+                        subtitle: const Text('Rider Name'),
                       ),
                     ),
-                    ListViewComponent(
-                      title: const Text('Rider ID'),
-                      subtitle: const Text('Rider Name'),
-                      trailing: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            height: 10,
-                            width: 10,
-                            decoration: BoxDecoration(
-                                color: Colors.amber,
-                                borderRadius: BorderRadius.circular(50)),
-                          ),
-                          SizedBox(
-                            height: size.height * 0.005,
-                          ),
-                          Icon(
-                            Icons.electric_bike_sharp,
-                            size: size.height * 0.04,
-                          ),
-                        ],
+                    Card(
+                      child: ListTile(
+                        dense: false,
+                        trailing: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              height: 10,
+                              width: 10,
+                              decoration: BoxDecoration(
+                                  color: Colors.red,
+                                  borderRadius: BorderRadius.circular(50)),
+                            ),
+                            SizedBox(
+                              height: size.height * 0.005,
+                            ),
+                            Image.asset(
+                              bike,
+                              scale: 7,
+                            )
+                          ],
+                        ),
+                        // leading: Column(
+                        //   mainAxisAlignment: MainAxisAlignment.center,
+                        //   crossAxisAlignment: CrossAxisAlignment.start,
+                        //   children: [
+                        //     Text(
+                        //       "Rs " + "100",
+                        //       style: TextStyle(
+                        //           fontWeight: FontWeight.w800,
+                        //           fontSize: 14,
+                        //           color: Colors.grey),
+                        //     ),
+                        //     SizedBox(
+                        //       height: 2,
+                        //     ),
+                        //     Text(
+                        //       '1 he',
+                        //       style: TextStyle(
+                        //           fontWeight: FontWeight.w800,
+                        //           fontSize: 14,
+                        //           color: Colors.black),
+                        //     ),
+                        //   ],
+                        // ),
+                        // title: Text(
+                        //   "pickup",
+                        //   style: TextStyle(
+                        //       fontWeight: FontWeight.w400,
+                        //       fontSize: 16,
+                        //       color: Colors.black),
+                        // ),
+                        // subtitle: Padding(
+                        //   padding: EdgeInsets.only(top: 5),
+                        //   child: Text(
+                        //     "drop",
+                        //     style: TextStyle(
+                        //         fontWeight: FontWeight.w400,
+                        //         fontSize: 14,
+                        //         color: Colors.grey),
+                        //   ),
+                        // ),
+                        title: const Text('Rider ID'),
+                        subtitle: const Text('Rider Name'),
+                      ),
+                    ),
+                    Card(
+                      child: ListTile(
+                        dense: false,
+                        trailing: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              height: 10,
+                              width: 10,
+                              decoration: BoxDecoration(
+                                  color: Colors.red,
+                                  borderRadius: BorderRadius.circular(50)),
+                            ),
+                            SizedBox(
+                              height: size.height * 0.005,
+                            ),
+                            Image.asset(
+                              rakhsha,
+                              scale: 7,
+                            )
+                          ],
+                        ),
+                        // leading: Column(
+                        //   mainAxisAlignment: MainAxisAlignment.center,
+                        //   crossAxisAlignment: CrossAxisAlignment.start,
+                        //   children: [
+                        //     Text(
+                        //       "Rs " + "100",
+                        //       style: TextStyle(
+                        //           fontWeight: FontWeight.w800,
+                        //           fontSize: 14,
+                        //           color: Colors.grey),
+                        //     ),
+                        //     SizedBox(
+                        //       height: 2,
+                        //     ),
+                        //     Text(
+                        //       '1 he',
+                        //       style: TextStyle(
+                        //           fontWeight: FontWeight.w800,
+                        //           fontSize: 14,
+                        //           color: Colors.black),
+                        //     ),
+                        //   ],
+                        // ),
+                        // title: Text(
+                        //   "pickup",
+                        //   style: TextStyle(
+                        //       fontWeight: FontWeight.w400,
+                        //       fontSize: 16,
+                        //       color: Colors.black),
+                        // ),
+                        // subtitle: Padding(
+                        //   padding: EdgeInsets.only(top: 5),
+                        //   child: Text(
+                        //     "drop",
+                        //     style: TextStyle(
+                        //         fontWeight: FontWeight.w400,
+                        //         fontSize: 14,
+                        //         color: Colors.grey),
+                        //   ),
+                        // ),
+                        title: const Text('Rider ID'),
+                        subtitle: const Text('Rider Name'),
                       ),
                     ),
                   ],

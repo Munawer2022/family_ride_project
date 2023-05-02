@@ -24,7 +24,7 @@ class CardComponent extends StatelessWidget {
     var theme = Theme.of(context);
     return Card(
       // elevation: 0,
-      color: shadeColor,
+
       child: Padding(
         padding: screenPadding.copyWith(left: 20, right: 20),
         child: Column(
