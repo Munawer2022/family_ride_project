@@ -75,6 +75,7 @@ class _CommissionState extends State<Commission> {
     return SafeArea(
       child: Scaffold(
         key: _scaffoldKey,
+        extendBodyBehindAppBar: true,
         appBar: MyAppBarWidget(
           ontap: null,
           leading: IconButton(
@@ -85,6 +86,9 @@ class _CommissionState extends State<Commission> {
           title: 'Commission',
         ),
         body: Container(
+          color: Palette.primaryColor.withOpacity(0.1),
+          width: bodyWidth,
+          height: bodyHeight,
           child: Padding(
             padding: const EdgeInsets.all(10.0),
             child: Column(

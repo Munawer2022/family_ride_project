@@ -2,9 +2,9 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_chat_ui/flutter_chat_ui.dart';
+
 import 'package:get_storage/get_storage.dart';
-import 'package:intl_phone_field/intl_phone_field.dart';
+
 import 'package:http/http.dart' as http;
 import 'package:rider/resources/components/custom_text_field.dart';
 

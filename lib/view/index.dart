@@ -1,10 +1,6 @@
-import 'dart:convert';
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
-import 'package:http/http.dart' as http;
 
 import '../config/palette.dart';
 import 'otp.dart';
@@ -24,19 +20,19 @@ class _LoginState extends State<Login> {
 
   void checkNumberR(String mobile) async {
     // ShowResponse(mobile, context);
-    var url = Uri.parse(
-        Palette.baseUrl + Palette.checkMobile + "?mobile_number=" + mobile);
-    var response = await http.get(url, headers: {
-      HttpHeaders.contentTypeHeader: "application/json",
-      HttpHeaders.acceptHeader: "application/json",
-    });
-    var responseData = json.decode(response.body);
+    // var url = Uri.parse(
+    //     Palette.baseUrl + Palette.checkMobile + "?mobile_number=" + mobile);
+    // var response = await http.get(url, headers: {
+    //   HttpHeaders.contentTypeHeader: "application/json",
+    //   HttpHeaders.acceptHeader: "application/json",
+    // });
+    // var responseData = json.decode(response.body);
 
-    print(responseData);
-    check(responseData['status'], mobile);
+    // print(responseData);
+    check(mobile);
   }
 
-  void check(bool data, String mobile) {
+  void check(String mobile) {
     setState(() {
       isMainButtonEnabled = true;
     });
@@ -46,7 +42,7 @@ class _LoginState extends State<Login> {
         builder: (context) => otp(
           mobile: mobile,
           countryCode: countryCode,
-          isNew: data,
+          isNew: false,
         ),
       ),
     );

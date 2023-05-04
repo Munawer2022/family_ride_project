@@ -1,13 +1,10 @@
 import 'dart:async';
 
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:rider/view/password.dart';
-import 'package:rider/view/register.dart';
 
 import '../config/palette.dart';
-import '../resources/widgets/response.dart';
+
 import '../utils/route/routes_name.dart';
 
 class otp extends StatefulWidget {

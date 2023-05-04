@@ -13,10 +13,22 @@ class ListViewComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: ListTile(title: title, subtitle: subtitle, trailing: trailing),
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        boxShadow: [
+          BoxShadow(
+              color: Color.fromRGBO(143, 148, 251, .2),
+              blurRadius: 20.0,
+              offset: Offset(0, 10))
+        ],
+      ),
+      child: Card(
+        elevation: 0,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: ListTile(title: title, subtitle: subtitle, trailing: trailing),
+        ),
       ),
     );
   }
