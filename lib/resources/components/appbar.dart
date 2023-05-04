@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../config/palette.dart';
+
 // appBar(dynamic text, dynamic ontap, dynamic bool) {
 //   return AppBar(
 //     automaticallyImplyLeading: bool,
@@ -24,7 +26,13 @@ class MyAppBarWidget extends StatelessWidget implements PreferredSize {
       elevation: 0,
       backgroundColor: Colors.transparent,
       automaticallyImplyLeading: false,
-      title: Text(title),
+      title: Text(
+        title,
+        style: TextStyle(
+            fontWeight: FontWeight.w600,
+            fontSize: 28,
+            color: Palette.primaryColor),
+      ),
     );
   }
 

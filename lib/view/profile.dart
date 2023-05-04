@@ -5,13 +5,11 @@ import 'package:flutter/material.dart';
 
 import 'package:get_storage/get_storage.dart';
 
-import 'package:http/http.dart' as http;
 import 'package:rider/resources/components/custom_text_field.dart';
 
 import '../config/palette.dart';
 import '../resources/components/appbar.dart';
 import '../utils/route/routes_name.dart';
-import 'otp.dart';
 
 class Profile extends StatefulWidget {
   @override
@@ -19,64 +17,7 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  final box = GetStorage();
   TextEditingController mobileController = new TextEditingController();
-
-  bool mobileValid = true, isMainButtonEnabled = true;
-
-  String countryCode = "+92";
-
-  void checkNumberR(String mobile) async {
-    // ShowResponse(mobile, context);
-    var url = Uri.parse(
-        Palette.baseUrl + Palette.checkMobile + "?mobile_number=" + mobile);
-    var response = await http.get(url, headers: {
-      HttpHeaders.contentTypeHeader: "application/json",
-      HttpHeaders.acceptHeader: "application/json",
-    });
-    var responseData = json.decode(response.body);
-
-    print(responseData);
-    check(responseData['status'], mobile);
-  }
-
-  void check(bool data, String mobile) {
-    setState(() {
-      isMainButtonEnabled = true;
-    });
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => otp(
-          mobile: mobile,
-          countryCode: countryCode,
-          isNew: data,
-        ),
-      ),
-    );
-    // if (mobile == "3112616413") {
-    //   Navigator.push(
-    //     context,
-    //     MaterialPageRoute(
-    //       builder: (context) => password(
-    //         mobile: mobile,
-    //       ),
-    //     ),
-    //   );
-    // } else {
-
-    // }
-  }
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -92,7 +33,13 @@ class _ProfileState extends State<Profile> {
                 onPressed: () {
                   Navigator.pushNamed(context, RoutesName.loginScreen);
                 },
-                child: const Text('Logout'))
+                child: const Text(
+                  'Logout',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      // fontSize: 28,
+                      color: Palette.primaryColor),
+                ))
           ],
           leading: IconButton(
               onPressed: () {

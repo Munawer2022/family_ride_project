@@ -35,35 +35,14 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
-  firebase_auth:
-  http:
+
   get_storage:
-  jiffy:
   intl_phone_field:
-  image_picker:
-  supercharged:
-  flutter_rating_bar:
-  avatar_glow:
-  font_awesome_flutter:
-  geolocator:
-  permission_handler:
-  toggle_switch:
   material_dialogs:
-  google_maps_flutter:
-  timer_count_down:
-  url_launcher:
-  flutter_chat_types:
-  flutter_chat_ui:
-  uuid:
-  provider:
-  flutter_faq:
-  webview_flutter_plus:
-  dio:
-  flutter_polyline_points:
-  geocoding:
-  simple_animations: ^3.0.1
-  flutter_ringtone_player :
+
+
+  cupertino_icons: ^1.0.2
+  
   
 
 dev_dependencies:

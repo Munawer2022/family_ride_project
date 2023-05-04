@@ -4,8 +4,8 @@ import 'package:rider/utils/route/routes_name.dart';
 import 'package:rider/view/profile.dart';
 
 import '../../view/dashboard_screen.dart';
-import '../../view/history.dart';
-import '../../view/index.dart';
+import '../../view/commission.dart';
+import '../../view/login.dart';
 
 class Routes {
   static Route<dynamic> generateRoute(RouteSettings settings) {

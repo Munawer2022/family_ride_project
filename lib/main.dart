@@ -4,8 +4,6 @@ import 'package:rider/resources/font.dart';
 import 'package:rider/utils/route/routes.dart';
 import 'package:rider/utils/route/routes_name.dart';
 
-import 'config/palette.dart';
-
 void main() {
   runApp(const MyApp());
 }
